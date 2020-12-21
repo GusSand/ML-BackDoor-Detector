@@ -1,8 +1,21 @@
 # ML-BackDoor-Detector
 
+NOTES:
 
-To run the code you need to use it as follows:
+We expect there to be two directories where you run the code:
+1. models
+2. data
 
+that will contain model and data respectively. 
+We also assume that the clean validation dataset in data/clean_validation_data.h5
+
+
+To run the code do the following:
+- Create the directories for the file either in google drive or locally
+- open the notebook in colab or jupyter
+- run from beginning to end. 
+
+To run just parts here's the python code
 ```python 
   # First load the model and weights, this also gets the model cleaning the data
   bad_net_cleaner = BadNetCleaner('models/sunglasses_bd_net.h5','models/sunglasses_bd_weights.h5')
