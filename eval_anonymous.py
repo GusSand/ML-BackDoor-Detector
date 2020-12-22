@@ -34,10 +34,8 @@ def main():
     images = np.array(img_list)
     images = images*255
 
-    bad_net_cleaner_anonymous = BadNetCleaner('models/anonymous_bd_net.h5','models/anonymous_bd_weights.h5')
     # Predict the poison data, label should be 1283 (N+1)
-    x_poison, y_poison = data_loader('data/anonymous_1_poisoned_data.h5')
-    #y_hat = bad_net_cleaner.predict_label(x_poison) # x_poison : image data X, MUST NOT /255!
+    bad_net_cleaner_anonymous = BadNetCleaner('models/anonymous_bd_net.h5','models/anonymous_bd_weights.h5')
     y_hat = bad_net_cleaner_anonymous.predict_label(images) # x_poison : image data X, MUST NOT /255!
 
     print(f"Result: Class ->{y_hat}")
