@@ -1,16 +1,53 @@
 # ML-BackDoor-Detector
 
-NOTES:
-
 We expect there to be two directories where you run the code:
 1. models
 2. data
 
-that will contain model and data respectively. 
-We also assume that the clean validation dataset in data/clean_validation_data.h5
+the expected contents are below. Otherwise our scripts won't run. 
+
+```bash
+├── data 
+    └── clean_validation_data.h5 // this is clean data used to evaluate the BadNet and design the backdoor defense
+    └── clean_test_data.h5
+    └── sunglasses_poisoned_data.h5
+
+├── models
+    └── anonymous_bd_net.h5
+    └── anonymous_bd_weights.h5
+    └── sunglasses_bd_net.h5
+    └── sunglasses_bd_weights.h5
+    └── multi_trigger_multi_target_bd_net.h5
+    └── multi_trigger_multi_target_bd_weights.h5
+
+```
+
+## I. Dependencies
+   1. Python 3.6.9
+   2. Keras 2.3.1
+   3. Numpy 1.16.3
+   4. Matplotlib 2.2.2
+   5. H5py 2.9.0
+   6. TensorFlow-gpu 1.15.2
 
 
-To run the code do the following:
+
+NOTES:
+
+To run the code depending on the backdoor type:
+
+- python3 eval_sunglasses.py <test_image.png>
+
+- python3 eval_multi.py <test_image.png>
+
+- python3 eval_anonymous.py <test_image.png>
+
+
+Output should be either 1283 (if test_image.png is poisoned) or one class in range [0, 1282] (if test_image.png is not poisoned).
+
+
+
+To run all the code do the following:
 - Create the directories for the file either in google drive or locally
 - open the notebook in colab or jupyter
 - run from beginning to end. 
