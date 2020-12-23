@@ -35,7 +35,7 @@ def main():
     images = images*255
 
     # Predict the poison data, label should be 1283 (N+1)
-    multi_cleaner = BadNetCleaner('models/sunglasses_bd_net.h5','models/sunglasses_bd_weights.h5')
+    multi_cleaner = BadNetCleaner('models/multi_trigger_multi_target_bd_net.h5','models/multi_trigger_multi_target_bd_weights.h5')
     y_hat = multi_cleaner.predict_label(images) # x_poison : image data X, MUST NOT /255!
 
     print(f"Result: Class ->{y_hat}")
