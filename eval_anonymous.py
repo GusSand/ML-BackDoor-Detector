@@ -17,7 +17,6 @@ from keras import models
 from sklearn.neighbors import LocalOutlierFactor
 import keras
 import pdb
-import BadNetCleaner
 import matplotlib
 
 from badnetcleaner import *
