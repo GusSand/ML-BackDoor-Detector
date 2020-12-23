@@ -16,7 +16,6 @@ from keras import models
 from sklearn.neighbors import LocalOutlierFactor
 import keras
 import pdb
-import BadNetCleaner
 import matplotlib
 
 from badnetcleaner import *
@@ -44,4 +43,10 @@ def main():
 
 
 if __name__ == '__main__':
+
+    config=tf.compat.v1.ConfigProto()
+    config.gpu_options.allow_growth = True
+    sess=tf.compat.v1.Session(config=config)
+
+
     main()
