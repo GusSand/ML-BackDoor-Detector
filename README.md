@@ -32,19 +32,20 @@ the expected contents are below. Otherwise our scripts won't run.
 
 
 
-NOTES:
+## II. Running the code for one image using a script
 
 To run the code depending on the backdoor type:
 
-- python3 eval_sunglasses.py <test_image.png>
+- **python3 eval_sunglasses.py <test_image.png>**
 
-- python3 eval_multi.py <test_image.png>
+- **python3 eval_multi.py <test_image.png>**
 
-- python3 eval_anonymous.py <test_image.png>
+- **python3 eval_anonymous.py <test_image.png>**
 
 
 Output should be either 1283 (if test_image.png is poisoned) or one class in range [0, 1282] (if test_image.png is not poisoned).
 
+## III. Running the code in Colab
 
 
 To run all the code do the following:
