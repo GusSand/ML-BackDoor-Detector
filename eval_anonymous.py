@@ -7,6 +7,7 @@ import h5py
 import matplotlib.pyplot as plt
 # tensorflow, keras
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 from tensorflow import keras
 from tensorflow.keras import optimizers
 from keras.models import load_model

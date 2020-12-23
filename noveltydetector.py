@@ -7,6 +7,8 @@ import h5py
 import matplotlib.pyplot as plt
 # tensorflow, keras
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
+
 from tensorflow import keras
 from tensorflow.keras import optimizers
 from keras.models import load_model
@@ -144,7 +146,7 @@ class NoveltyDetector(object):
             
             i += 1
         print("***Predict finish***")
-        print("*** Novelty Detector: Detected: {i}")
+        #print("*** Novelty Detector: Detected: {i}")
         return y_hat, result_conv4
     
     def get_conv4_characters_list(self):

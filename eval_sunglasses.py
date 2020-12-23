@@ -7,6 +7,7 @@ import h5py
 import matplotlib.pyplot as plt
 # tensorflow, keras
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 from tensorflow import keras
 from tensorflow.keras import optimizers
 from keras.models import load_model
@@ -44,9 +45,11 @@ def main():
 
 if __name__ == '__main__':
 
-    config=tf.compat.v1.ConfigProto()
-    config.gpu_options.allow_growth = True
-    sess=tf.compat.v1.Session(config=config)
+    # os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+    # config=tf.compat.v1.ConfigProto()
+    # config.gpu_options.allow_growth = True
+    # sess=tf.compat.v1.Session(config=config)
+    # keras.__version__
 
 
     main()

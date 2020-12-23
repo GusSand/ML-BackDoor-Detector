@@ -7,6 +7,8 @@ import h5py
 import matplotlib.pyplot as plt
 # tensorflow, keras
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
+
 from tensorflow import keras
 from tensorflow.keras import optimizers
 from keras.models import load_model
@@ -49,7 +51,7 @@ class New_Decision_Function(object):
         
         """
         # define input
-        x = keras.Input(shape=(960), name='input')
+        x = keras.Input(shape=(960,), name='input')
         fc_2 = keras.layers.Dense(160, name='fc_2')(x)
         add_1 = keras.layers.Activation('relu')(fc_2)
         drop = keras.layers.Dropout(0.5)
