@@ -29,7 +29,7 @@ the expected contents are below. Otherwise our scripts won't run.
    4. Matplotlib 2.2.2
    5. H5py 2.9.0
    6. TensorFlow-gpu 1.15.2
-
+   7. OpenCV2 4.4
 
 
 ## II. Running the code for one image using a script
@@ -45,7 +45,49 @@ To run the code depending on the backdoor type:
 
 Output should be either 1283 (if test_image.png is poisoned) or one class in range [0, 1282] (if test_image.png is not poisoned).
 
-## III. Running the code in Colab
+## III. Running Unit Tests
+
+You can run the units by typing:
+
+```bash
+python test_multi.py
+
+python test_anonymous.py
+
+python test_glasses.py 
+```
+
+This will give output as follows: 
+
+```bash
+***Finish***
+***Initialzation finish***
+**************************************************************
+***Start bad net prediction***
+***Predict finish***
+***Start novelty detector prediction***
+***Predict finish***
+***Start new decision function prediction***
+***Predict finish***
+**************************END*********************************
+Backdoor attack Success Rate for Sunglasses poisoned data: 0.015588464536236302
+.**************************************************************
+***Start bad net prediction***
+***Predict finish***
+***Start novelty detector prediction***
+***Predict finish***
+***Start new decision function prediction***
+***Predict finish***
+**************************END*********************************
+Clean data accuracy: 81.46531566640685
+.
+----------------------------------------------------------------------
+Ran 2 tests in 137.882s
+
+```
+
+
+## IV. Running the code in Colab
 
 
 To run all the code do the following:

@@ -18,7 +18,7 @@ from sklearn.neighbors import LocalOutlierFactor
 import keras
 import pdb
 import matplotlib
-
+import cv2
 from badnetcleaner import *
 
 
@@ -27,12 +27,11 @@ img_filename = str(sys.argv[1])
 
 def main():
 
-    img = matplotlib.image.imread(img_filename)
+    img = cv2.imread(img_filename)
     
     img_list = []
     img_list.append(img)
     images = np.array(img_list)
-    images = images*255
 
     # Predict the poison data, label should be 1283 (N+1)
     bad_net_cleaner_anonymous = BadNetCleaner('models/anonymous_bd_net.h5','models/anonymous_bd_weights.h5')
